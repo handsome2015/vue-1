@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue初学</title>
+</head>
+<body>
+<!--    view层 模板-->
+
+<!--   1、引入vue.js-->
+<!--  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>-->
+<script src="js/vue.js"></script>
+
+<!--例子1：用简洁的模板语法来声明式地将数据渲染进 DOM 的系统-->
+//可以尝试在页面上添加一些新的变量，然后就在data 中赋值，
+<div id="one">
+    {{seen}} {{name}}
+</div>
+
+<script>
+    var first =new Vue({
+        el:"#one",
+        data:{
+            seen: "hello!",
+            name:"walking"
+
+        }
+    });
+</script>
+
+<!--例子2：v-bind绑定-->
+<div id="app">
+    <!--    {{message}}-->
+        <span v-bind:title="message">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
+</div>
+<script>
+    var vm =new Vue({
+        el:"#app",
+        // model = 数据
+        data:{
+            message:"hi,Vue.js!  "+ new Date().toLocaleString()
+        }
+    });
+</script>
+
+</body>
+</html>
